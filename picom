@@ -1,0 +1,11 @@
+vsync = true;
+
+backend = "xrender";
+
+fading = true;
+
+corner-radius = 10;
+
+max-brightness = 0.2;
+
+shadow = true;

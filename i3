@@ -11,9 +11,13 @@
 
 set $mod Mod4
 
+# Disable window borders, title bars and set gaps
+for_window [class=".*"] border none
+gaps inner 5px
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Cascadia Mono Regular 10
+font pango:CaskaydiaMono Nerd Font Regular 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -22,6 +26,12 @@ font pango:Cascadia Mono Regular 10
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
+
+# Wallpapers
+exec_always --no-startup-id feh --bg-fill --randomize --slideshow-delay 20.0 ~/Pictures/Wallpapers
+
+# Picom
+exec_always --no-startup-id picom
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -121,11 +131,11 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
+set $ws1 "1:  Terminal"
+set $ws2 "2: 󰊯 Web"
+set $ws3 "3:  Discord"
+set $ws4 "4:  Moonlight"
+set $ws5 "5:  Steam"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -189,6 +199,12 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+for_window [class="Xfce4-terminal"] move to workspace $ws1
+for_window [class="Brave-browser"] move to workspace $ws2
+for_window [class="discord"] move to workspace $ws3
+for_window [class="Moonlight"] move to workspace $ws4
+for_window [class="steam"] move to workspace $ws5
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
