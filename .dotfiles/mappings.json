@@ -3,5 +3,8 @@
   "gtk-3.0": "~/.config/gtk-3.0/settings.ini",
   "i3": "~/.config/i3/config",
   "most": "~/.mostrc",
-  "picom": "~/.config/picom.conf"
+  "picom": "~/.config/picom.conf",
+  "i3status": "~/.config/i3status/config",
+  "hcl-ftdetect": "~/.vim/ftdetect/hcl.vim",
+  "hcl-syntax": "~/.vim/syntax/hcl.vim"
 }

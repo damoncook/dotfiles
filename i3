@@ -136,7 +136,7 @@ set $ws2 "2: 󰊯 Web"
 set $ws3 "3:  Discord"
 set $ws4 "4:  Moonlight"
 set $ws5 "5:  Steam"
-set $ws6 "6"
+set $ws6 "6: 󰺷 Games" 
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
@@ -205,6 +205,10 @@ for_window [class="Brave-browser"] move to workspace $ws2
 for_window [class="discord"] move to workspace $ws3
 for_window [class="Moonlight"] move to workspace $ws4
 for_window [class="steam"] move to workspace $ws5
+for_window [class="heroic"] move to workspace $ws6
+
+for_window [class="Galculator" instance="galculator"] floating enable
+for_window [class="eqgame.exe"] floating enable
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
